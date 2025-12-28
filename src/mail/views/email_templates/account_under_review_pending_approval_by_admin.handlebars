@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <title>New Account Pending Approval | Peptide</title>
+    <style>
+      @font-face {
+        font-family: 'Roboto';
+        src: url('path/to/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+      }
+      html, body {
+        background-color: black;
+        width: 100vw;
+        padding: 0px;
+        margin: 0px;
+        color: black;
+        font-family: 'Roboto', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .card {
+        background-color: white;
+        padding: 10px 30px;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 1px 1px 1px grey;
+      }
+      .mt-10 {
+        margin-top: 10px !important;
+      }
+      .mt-20 {
+        margin-top: 20px !important;
+      }
+      .header__text {
+        border: 1px solid black;
+        padding: 5px;
+        border-radius: 2px;
+        font-weight: bold;
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+        text-align: center;
+      }
+      .text__center {
+        text-align: center;
+      }
+      .logo {
+        width: 260px;
+        height: 120px;
+        display: block;
+        margin: auto;
+      }
+      .content__wrapper {
+        background-color: #121212;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 20px;
+        min-height: 70vh;
+      }
+      .container {
+        max-width: 1080px;
+        margin: auto;
+        background-color: black;
+        width: 100%;
+        margin-top: 20px;
+      }
+      p {
+        margin: 5px;
+        padding: 0px;
+      }
+      h3 {
+        margin: 5px;
+      }
+      .link {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+        display: block;
+        margin-bottom: 10px;
+        color: black;
+      }
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      {{!-- Show logo only if data.images.logo_url is available --}}
+      {{#if data.images.logo_url}}
+        <img src="{{data.images.logo_url}}" alt="Logo" class="logo" width="260" height="120" />
+      {{/if}}
+      <div class="content__wrapper">
+        <br />
+        <div class="card mt-10">
+          <div class="header__text">New Account Requires Approval</div>
+          <p class="mt-20">Hello Admin,</p>
+          <p>A new user has registered and their account is pending approval.</p>
+
+          {{#if customerName}}
+            <p class="mt-10"><strong>Details:</strong></p>
+            <p><b>Customer Name:</b> {{customerName}}</p>
+            {{#if customerEmail}}
+              <p><b>Email:</b> {{customerEmail}}</p>
+            {{/if}}
+            {{#if registrationTime}}
+              <p><b>Signed Up At:</b> {{registrationTime}}</p>
+            {{/if}}
+          {{else}}
+            {{#if customerEmail}}
+              <p class="mt-10"><strong>Details:</strong></p>
+              <p><b>Email:</b> {{customerEmail}}</p>
+              {{#if registrationTime}}
+                <p><b>Signed Up At:</b> {{registrationTime}}</p>
+              {{/if}}
+            {{else}}
+              {{#if registrationTime}}
+                <p class="mt-10"><strong>Details:</strong></p>
+                <p><b>Signed Up At:</b> {{registrationTime}}</p>
+              {{/if}}
+            {{/if}}
+          {{/if}}
+
+          {{#if data.adminPortalUrl}}
+            <p class="mt-10">
+              Please log in to the admin panel to review and approve this account.
+            </p>
+            <a href="{{data.adminPortalUrl}}" class="link mt-10">Go to Admin Panel</a>
+          {{/if}}
+
+          <p class="mt-20">Best regards,<br />Hammer &amp; Bell System</p>
+        </div>
+
+        {{#if data.footer}}
+          {{#if data.footer.isFooterShow}}
+            <div class="card mt-20 text__center">
+              <h3>Need Help?</h3>
+              {{#if data.footer.email}}
+                <p><b>Email:</b> {{data.footer.email}}</p>
+                <br />
+              {{/if}}
+              {{#if data.unsubscribe_link}}
+                <div>
+                  <a href="{{data.unsubscribe_link}}" class="text__center" style="text-decoration: underline; font-weight: bold;font-size: 1.2rem; text-align: center; display: block; color:#4c83ee;">
+                    Unsubscribe</a> from mailing list.
+                </div>
+              {{/if}}
+            </div>
+          {{/if}}
+        {{/if}}
+      </div>
+    </div>
+  </body>
+</html>

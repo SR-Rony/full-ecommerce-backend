@@ -1,0 +1,32 @@
+{
+  "cSpell.words": [
+    "auctropin",
+    "btcpay",
+    "Cryptr",
+    "dont",
+    "labtestedproducts",
+    "Logform",
+    "maxlength",
+    "NOWPAYMENT",
+    "nowpayments",
+    "PAMENT",
+    "payin",
+    "psss",
+    "sadd",
+    "setex",
+    "shippingcountries",
+    "sismember",
+    "srem",
+    "ticketconversations",
+    "Unsubscriber"
+  ],
+  "task.allowAutomaticTasks": true,
+  "debug.openDebug": "neverOpen",
+  "terminal.integrated.inheritEnv": false,
+  "tasks": {
+    "label": "lint on open",
+    "type": "shell",
+    "command": "npm run lint",
+    "runOn": "folderOpen"
+  }
+}

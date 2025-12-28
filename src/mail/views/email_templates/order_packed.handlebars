@@ -1,0 +1,173 @@
+<html>
+
+<head>
+  <title>Order Packed | HB</title>
+  <style>
+    @font-face {
+      font-family: 'Roboto';
+      src:
+        url('path/to/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+      /* Add
+      additional font variations (e.g., italic, bold, etc.) if desired */
+    }
+
+    html,
+    body {
+      background-color: black;
+      width: 100vw;
+      padding: 0px;
+      margin: 0px;
+      color: black;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .card {
+      background-color: white;
+      padding: 10px 30px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 1px 1px 1px grey;
+    }
+
+    .mt-10 {
+      margin-top: 10px !important;
+    }
+
+    .mt-20 {
+      margin-top: 20px !important;
+    }
+
+    .header__text {
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 2px;
+      font-weight: bold;
+      width: 80%;
+      margin: auto;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .text__center {
+      text-align:
+        center;
+    }
+
+    .logo {
+      width: 260px;
+      height: 120px;
+      display: block;
+      margin:
+        auto;
+    }
+
+    .content__wrapper {
+      /* Remove the background image */
+      /*
+      background-image: url("{{data.images.bg_url}}"); */
+      /* Use a solid
+      background color */
+      background-color: #121212;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 20px;
+      min-height: 70vh;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: auto;
+      width: 100%;
+      background-color: black;
+      margin-top: 20px;
+    }
+
+    p {
+      margin: 5px;
+      padding:
+        0px;
+    }
+
+    h3 {
+      margin: 5px;
+    }
+
+    .link {
+      text-decoration: none;
+      font-weight:
+        bold;
+      font-size: 1.2rem;
+      text-align: center;
+      display: block;
+      margin-bottom: 10px;
+      color: black;
+    }
+
+    .mb-5 {
+      margin-bottom: 5px;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    {{!-- <img src="{{data.images.logo_url}}" style="display: block;" title="Logo" alt="Logo" width="260" height="120"
+      class="logo" /> --}}
+    <div class="content__wrapper">
+      <br />
+      <div class="card mt-10 text__center">
+        <div class="header__text">ORDER #{{data.order.orderId}} PACKED</div>
+        <p class="mt-20 bold">Your new order, #{{data.order.orderId}}, is
+          officially packed and is now ready to be shipped out.</p>
+        <br />
+        <br />
+        <p class="mt-20">You will be notified when the order is shipped.
+          Please note: we do not give tracking numbers out immediately, only
+          if the package hasn't arrived after a while. It is important you
+          login to your account and check your email inbox so if we have
+          questions about shipment we can reach out to you and, additionally,
+          you can monitor your package.</p>
+        <p class="mt-20">Based on your selected shipping, you can determine
+          how long it takes your order to arrive based on the day it is marked
+          as "shipped".</p>
+        <br />
+        <p class="text__center mt-20 link">THANK YOU FOR YOUR PURCHASE!</p>
+
+        <p>
+          Please visit the site to see your full order, for your safety we have only listed total amount spent here, but
+          you can see the full breakdown of your order
+          <a href="{{data.link}}"
+            style="text-decoration: underline; color: #007bff;text-align: center; font-weight: 500;">GO TO ORDER
+            DETAILS</a>
+        </p>
+      </div>
+
+
+      <div class="card mt-20 text__center">
+        {{#if data.footer.isFooterShow}}
+        <h3>Need Help?</h3>
+        <p><b>Email:</b> {{data.footer.email}}</p>
+        <br />
+        {{/if}}
+        <div style="">
+          <a href="{{data.unsubscribe_link}}" class="text__center"
+            style="text-decoration: underline; font-weight: bold;font-size: 1.2rem; text-align: center; display: block; color:#4c83ee;">
+            Unsubscribe</a> from mailing list.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

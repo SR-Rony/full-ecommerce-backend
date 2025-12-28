@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Your Account Has Been Approved | Peptide</title>
+    <style>
+      @font-face { font-family: 'Roboto'; src:
+      url('path/to/fonts/roboto/Roboto-Regular.ttf') format('truetype'); }
+      html,body { background-color: black; width: 100vw; padding:0px;
+      margin:0px; color:black; font-family: 'Roboto', sans-serif; }
+      * { box-sizing: border-box; }
+      .card { background-color: white; padding: 10px 30px; max-width: 600px; margin: auto; box-shadow: 1px 1px 1px grey; }
+      .mt-10 { margin-top: 10px !important; }
+      .mt-20 { margin-top: 20px !important; }
+      .header__text { border: 1px solid black; padding: 5px; border-radius: 2px; font-weight: bold; width: 80%; margin: auto; margin-top: 40px; text-align: center; }
+      .text__center { text-align: center; }
+      .logo { width: 260px; height: 120px; display: block; margin: auto; }
+      .content__wrapper { background-color: #121212; background-size: cover; background-repeat: no-repeat; padding: 20px; min-height: 70vh; }
+      .container { max-width: 1080px; margin: auto; background-color: black; width: 100%; margin-top: 20px; }
+      p { margin: 5px; padding: 0px; }
+      h3 { margin: 5px; }
+      .link { text-decoration: none; font-weight: bold; font-size: 1.2rem; text-align: center; display: block; margin-bottom: 10px; color:#4c83ee; }
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content__wrapper">
+        <br />
+        <div class="card mt-10">
+          <div class="header__text">Your Account Has Been Approved – Welcome! 🎉</div>
+          {{#if customerName}}
+            <p class="mt-20">Dear {{customerName}},</p>
+          {{else}}
+            <p class="mt-20">Dear Customer,</p>
+          {{/if}}
+          <p>
+            We're happy to inform you that your account has been successfully approved! 🎉
+          </p>
+          <p>
+            You can now log in to your account and start purchasing products on our website:
+          </p>
+          {{#if data.loginLink}}
+            <p class="text__center mt-20">
+              <a href="{{data.loginLink}}" class="link">👉 Login Now</a>
+            </p>
+          {{/if}}
+          <p>
+            If you have any questions or need assistance, feel free to contact our support team.
+          </p>
+          <p>Thank you for joining us!</p>
+          <br />
+          <p>Best regards,<br />The Hammer &amp; Bell Team</p>
+        </div>
+        {{#if data.footer}}
+          <div class="card mt-20 text__center">
+            {{#if data.footer.isFooterShow}}
+              <h3>Need Help?</h3>
+              {{#if data.footer.email}}
+                <p><b>Email:</b> {{data.footer.email}}</p>
+                <br />
+              {{/if}}
+            {{/if}}
+            {{#if data.unsubscribe_link}}
+              <div>
+                <a href="{{data.unsubscribe_link}}" class="text__center" style="text-decoration: underline; font-weight: bold;font-size: 1.2rem; text-align: center; display: block; color:#4c83ee;">
+                  Unsubscribe</a> from mailing list.
+              </div>
+            {{/if}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </body>
+</html> 
