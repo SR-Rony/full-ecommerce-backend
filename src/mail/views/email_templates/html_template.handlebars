@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <style>
+      @font-face { font-family: 'Roboto'; src:
+      url('path/to/fonts/roboto/Roboto-Regular.ttf') format('truetype'); /* Add
+      additional font variations (e.g., italic, bold, etc.) if desired */ }
+      html,body { background-color: black; width: 100vw; font-family: 'Roboto',
+      sans-serif; padding:0px; margin:0px; color:black; } * { box-sizing:
+      border-box; } .card { background-color: white; padding: 10px 30px;
+      max-width: 600px; margin: auto; box-shadow: 1px 1px 1px grey; } .mt-10 {
+      margin-top: 10px !important; } .mt-20 { margin-top: 20px !important; }
+      .header__text { border: 1px solid black; padding: 5px; border-radius: 2px;
+      font-weight: bold; width: 80%; margin: auto; margin-top: 40px; text-align:
+      center; } .text__center { text-align: center; } .logo { width: 260px;
+      height: 120px; display: block; margin: auto; } .content__wrapper { /*
+      Remove the background image */ /* background-image: url("{{data.images.bg_url}}");
+      */ /* Use a solid background color */ background-color: #121212;
+       padding: 20px;
+      min-height: 70vh; } .container { max-width: 1080px; margin: auto; width:
+      100%; margin-top: 20px; background-color: black; } p { margin: 5px;
+      padding: 0px; } h3 { margin: 5px; } .link { text-decoration: none;
+      font-weight: bold; font-size: 1.2rem; text-align: center; display: block;
+      margin-bottom: 10px; color:black; } @import
+      url('https://fonts.googleapis.com/css?family=Roboto');
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      {{!-- <img src="{{data.images.logo_url}}" style="display: block;" title="Logo" alt="Logo" width="260" height="120" class="logo" /> --}}
+      <div class="content__wrapper">
+        <br />
+        <div style="min-height: 250px;" class="card mt-10">
+          {{{body}}}
+        </div>
+      </div>
+      
+        <div class="card mt-20 text__center">
+          {{#if data.footer.isFooterShow}}
+              <h3>Need Help?</h3>
+              <p><b>Email:</b> {{data.footer.email}}</p>
+              <br />
+          {{/if}}
+          <div style="">
+            <a href="{{data.unsubscribe_link}}" class="text__center" style="text-decoration: underline; font-weight: bold;font-size: 1.2rem; text-align: center; display: block; color:#4c83ee;">
+              Unsubscribe</a> from mailing list.
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
