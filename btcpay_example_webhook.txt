@@ -1,0 +1,14 @@
+Webhook payload  {
+0|api.hb.shop  |   deliveryId: 'Lmsto4nV7CNsCA2ZfYrrgj',
+0|api.hb.shop  |   webhookId: 'EFZViYR7ZMf2dgGRgnja2T',
+0|api.hb.shop  |   originalDeliveryId: 'ExgaaEg3tidgtTLP6KEuoj',
+0|api.hb.shop  |   isRedelivery: true,
+0|api.hb.shop  |   type: 'InvoiceCreated',
+0|api.hb.shop  |   timestamp: 1749665916,
+0|api.hb.shop  |   storeId: 'EvoCmtuxmsTKugWhAMi95QX8JZFUYEDqUPMFhmPeJ2b7',
+0|api.hb.shop  |   invoiceId: '7XaHesKa1a1AZ5LvkKytFy',
+0|api.hb.shop  |   metadata: {
+0|api.hb.shop  |     orderId: 'rzXluf',
+0|api.hb.shop  |     orderUrl: 'https://peptide.site/customer/order/details/rzXluf'
+0|api.hb.shop  |   }
+0|api.hb.shop  | }
